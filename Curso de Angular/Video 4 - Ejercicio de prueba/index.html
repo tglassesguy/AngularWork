@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app>
+    <head>
+        <meta charset="utf-8">
+        <title>Cuaderno de Trabajadores</title>
+        <link rel="stylesheet" href="css/styles.css" type="text/css">
+    </head>
+    <body ng-controller="TrabajadoresController">
+        <h1>Cuaderno de Trabajadores</h1>
+        <div class="wrapper">
+            <div class="contact-item" ng-repeat="trabajador in trabajadores | orderBy:'nombre'">
+                <div class="nombre">{{trabajador.nombre}} - {{trabajador.identificacion}}</div>
+                <span class="curso">{{trabajador.cargo}}</span>
+            </div>
+        </div>
+        <div class="wrapper">
+            Nombre: <input type="text" ng-model="nuevosTrabajadores.nombre"></input>
+            Identificacion: <input type="text" ng-model="nuevosTrabajadores.identificacion"></input>
+            Cargo: <input type="text" ng-model="nuevosTrabajadores.cargo"></input>
+            <button type="button" ng-click="Save()">Guardar</button>
+
+        </div>
+        <script src="js/index.js" type="text/javascript"></script>
+        <script src="js/angular.min.js" type="text/javascript"></script>
+    </body>
+</html>
